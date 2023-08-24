@@ -1,0 +1,10 @@
+<h1>All movies lists</h1>
+
+
+<div class="container d-flex d-wrap">
+  <% @lists.each do |list| %>
+    <div class="card"><%= link_to list.name, list_path(list) %></div>
+  <% end %>
+</div>
+
+<%= link_to "Create new list", new_list_path %>
