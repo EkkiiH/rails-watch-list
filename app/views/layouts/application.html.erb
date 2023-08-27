@@ -14,7 +14,8 @@
     <nav class="navbar sticky-top bg-white">
       <div class="container-fluid d-flex">
         <a class="navbar-brand d-flex me-auto" href="/">
-          <%= image_tag "logo.png", class: "d-inline-block align-text-bottom", style: 'width:40px;height:40px;', alt: "Logo" %>
+          <%= cl_image_tag "md69dee4aylbdesvclx3",
+              style: 'width:40px;height:40px;', alt: "Logo" %>
           <%= link_to "💗 My lists", root_path, class: "btn btn-light me-3" %>
           <%= link_to "➕ New list", new_list_path, class: "btn btn-light me-3" %>
         </a>

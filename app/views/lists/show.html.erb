@@ -1,10 +1,13 @@
 <%= tag.h1 @list.name, class: "mx-3"  %>
+  <%= cl_image_tag @list.photo.key, style: "height:18rem;width:100%;object-fit:cover", crop: :fill %>
 
 <div class="d-flex flex-wrap justify-content-center">
   <% @bookmarks.each do |bookmark| %>
     <div class="card m-3 card-porduct d-flex" style="width: 44%;">
       <%= image_tag bookmark.movie.poster_url, style:'height:16rem;object-fit:cover;object-position:0% 5%;' %>
-      <h4 class="card-img-overlay title-product align-self-end"><%= bookmark.movie.title %></h4>
+      <h4 class="card-img-overlay title-product align-self-end">
+        <%= bookmark.movie.title %>
+      </h4>
       <div class="p-3">
         <p><%= bookmark.movie.overview %></p>
         <p class='fst-italic'>- <%= bookmark.comment %></p>

@@ -3,5 +3,6 @@
 
 <%= simple_form_for @list do |f| %>
   <%= f.input :name, class: 'form-control' %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit value:"Create", class: "btn btn-primary button" %>
 <% end %>
