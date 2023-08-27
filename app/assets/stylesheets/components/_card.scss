@@ -1,0 +1,52 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  // height: 180px;
+  background-color: $gray;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  color: $light-gray;
+  font-size: 24px;
+  overflow: hidden;
+  border: 0px solid rgba(0,0,0,0) !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category img{
+  opacity: 0.5;
+}
+.card-category a {
+  color: $light-gray !important;
+  font-weight: bold !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.link-white a {
+
+  color: $light-gray;
+}
+
+.card-porduct {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 0px solid rgba(0,0,0,0) !important;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.title-product {
+  font-size: 1.2em;
+  color: $light-gray;
+  font-weight: bolder;
+  align-self: flex-end;
+  position: absolute;
+  top: 13rem;
+  width: 100%;
+  height: 3rem;
+  overflow: hidden;
+  background-color: rgba($color: $gray, $alpha: 0.5);
+}

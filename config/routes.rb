@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   # post 'lists', to: 'lists#create'
   # get 'lists/:id', to: 'lists#show', as: "list"
 
-  resources :lists do
+  root to: 'lists#index', as: :lists
+  resources :lists, except: :index do
     resources :bookmarks, only: %i[new create]
   end
   resources :bookmarks, only: %i[destroy]
 
   # get 'lists/:id/bookmarks/new', to: "bookmarks#new"
   # get 'lists/:id/bookmarks', to: "bookmarks#create"
-
 end
 
 # index, show, new, create

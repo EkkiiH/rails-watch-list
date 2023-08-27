@@ -1,6 +1,7 @@
 <h1>Create a new list</h1>
 
-<%= simple_form_for @lists do |f| %>
-  <%= f.input :name %>
-  <%= f.submit value:"Create", class: "btn btn-primary" %>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, class: 'form-control' %>
+  <%= f.submit value:"Create", class: "btn btn-primary button" %>
 <% end %>

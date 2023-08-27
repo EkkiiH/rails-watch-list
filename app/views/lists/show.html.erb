@@ -1,22 +1,31 @@
-<h1><%= @list.name %></h1>
+<%= tag.h1 @list.name, class: "mx-3"  %>
 
-
-<%= link_to "Add a review", new_list_bookmark_path(@list), class: 'btn btn-success'  %>
-
-<div class="container">
+<div class="d-flex flex-wrap justify-content-center">
   <% @bookmarks.each do |bookmark| %>
-    <div class="card m-3" style="width:300px;">
-      <%= image_tag bookmark.movie.poster_url, style: 'height:200px;'%>
-      <p><%= bookmark.movie.title %></p>
-      <p><%= bookmark.movie.overview %></p>
-      <p><%= bookmark.comment %></p>
-      <p><%= link_to "Delete",
-            bookmark_path(bookmark),
+    <div class="card m-3 card-porduct d-flex" style="width: 44%;">
+      <%= image_tag bookmark.movie.poster_url, style:'height:16rem;object-fit:cover;object-position:0% 5%;' %>
+      <h4 class="card-img-overlay title-product align-self-end"><%= bookmark.movie.title %></h4>
+      <div class="p-3">
+        <p><%= bookmark.movie.overview %></p>
+        <p class='fst-italic'>- <%= bookmark.comment %></p>
+        <p class="text-end">
+          <%= link_to bookmark_path(bookmark),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} ,
-            class: 'btn btn-danger' %></p>
+            class: 'btn btn-danger button px-3' do %>
+              <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </p>
+      </div>
     </div>
   <% end %>
 </div>
 
+<div class="container m-3 pe-5 option-list d-flex  justify-content-end">
+  <%= link_to "Add a review", new_list_bookmark_path(@list), class: 'btn btn-success button'  %>
 
-<%= link_to "Back to main", lists_path, {class: 'btn btn-primary'} %>
+  <%= link_to 'Delete list',
+      list_path(@list),
+      class: 'btn btn-danger button',
+      data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?'} %>
+  <%= link_to "Back to main", lists_path, {class: 'btn btn-primary button'} %>
+</div>
